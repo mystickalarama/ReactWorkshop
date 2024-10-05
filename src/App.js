@@ -22,7 +22,6 @@ const App = () => {
     const fetchCategories = async () => {
       const response = await fetch('https://fakestoreapi.com/products/categories');
       const data = await response.json();
-
       const formattedCategories = data.map((category, index) => ({
         id: index + 1,
         name: category,
