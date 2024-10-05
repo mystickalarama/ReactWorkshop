@@ -1,26 +1,19 @@
-import React from 'react'
-import alertify from 'alertifyjs'
-import {Button, Card, CardBody, CardText, CardTitle} from 'reactstrap'
+import React from 'react';
+import { Card, CardBody, CardTitle, Button } from 'reactstrap';
 
-const ProductCart = ({product, onAddToCart}) =>{
-  const handleAddToCart = () =>{
-    onAddToCart(product);
-    alertify.success(`${product.name} sepete eklendi!`);
-  }
-
-  return(
-    <Card style={{margin: '10px'}}>
-        <img src={product.image} alt={product.name} style={{width: '100%'}}></img>
-        <CardBody>
-          <CardTitle>{product.name}</CardTitle>
-          <CardText>{product.description}</CardText>
-          <CardText>{product.price} ₺</CardText>
-          <Button onClick={handleAddToCart} color='success'>Sepete Ekle</Button>
-
-        </CardBody>
-
+const ProductCart = ({ product, onAddToCart }) => {
+  return (
+    <Card className="product-card">
+      <img src={product.image} alt={product.title} className="product-image" />
+      <CardBody className="d-flex flex-column">
+        <CardTitle tag="h5">{product.title}</CardTitle>
+        <div className="mt-auto">
+          <h6 className="text-primary">${product.price.toFixed(2)}</h6>
+          <Button color="success" onClick={() => onAddToCart(product)}>Sepete Ekle</Button>
+        </div>
+      </CardBody>
     </Card>
   );
-}
+};
 
 export default ProductCart;

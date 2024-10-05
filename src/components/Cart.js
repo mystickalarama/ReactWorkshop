@@ -21,7 +21,7 @@ const Cart = ({cartItems, onRemoveFromCart,onClearCart}) => {
     <ListGroup>
   {cartItems.map((item) => (
     <ListGroupItem key={item.id}>
-      {item.name} - ₺{item.price} x {item.quantity} = ₺{item.price * item.quantity}
+      {item.name} - ${item.price} x {item.quantity} = ${item.price * item.quantity}
       <Button
         color="warning"
         onClick={() => handleRemoveFromCart(item)}
