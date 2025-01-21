@@ -19,6 +19,8 @@ const App = () => {
       setProducts(data);
     };
 
+    /* Hi, I'm a comment. I'm here to help you understand the code. */
+
     const fetchCategories = async () => {
       const response = await fetch('https://fakestoreapi.com/products/categories');
       const data = await response.json();
